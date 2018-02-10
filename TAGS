@@ -1,0 +1,519 @@
+
+ssd.c,553
+int  main(30,2052
+struct ssd_info *simulate(simulate79,3478
+int get_requests(144,5213
+struct ssd_info *buffer_management(buffer_management298,11476
+unsigned int lpn2ppn(436,16504
+struct ssd_info *distribute(distribute454,17197
+void trace_output(536,19684
+void statistic_output(757,25167
+unsigned int size(869,32412
+unsigned int transfer_size(894,33041
+int64_t find_nearest_event(929,34564
+void free_all_node(965,36344
+struct ssd_info *make_aged(make_aged1027,38476
+struct ssd_info *no_buffer_distribute(no_buffer_distribute1078,40633
+
+pagemap.h,54
+#define PAGEMAP_H 19,1158
+#define MAX_INT64 24,1236
+
+pagemap.c,729
+#define _CRTDBG_MAP_ALLOC19,1141
+void file_assert(27,1351
+void alloc_assert(38,1647
+void trace_assert(51,2112
+struct local *find_location(find_location71,2852
+unsigned int find_ppn(112,4560
+int set_entry_state(152,6012
+struct ssd_info *pre_process_page(pre_process_page167,6437
+unsigned int get_ppn_for_pre_process(289,12590
+struct ssd_info *get_ppn(get_ppn413,17033
+ unsigned int get_ppn_for_gc(556,24894
+Status erase_operation(605,27049
+Status erase_planes(631,28645
+int gc_direct_erase(797,36159
+Status move_page(901,40155
+int uninterrupt_gc(988,45972
+int interrupt_gc(1092,51099
+int delete_gc_node(1182,55522
+Status gc_for_channel(1216,56336
+unsigned int gc(1333,61139
+int decide_gc_invoke(1383,62780
+
+initialize.c,637
+#define _CRTDBG_MAP_ALLOC19,1144
+#define FALSE	24,1222
+#define TRUE	25,1240
+#define ACTIVE_FIXED 27,1259
+#define ACTIVE_ADJUST 28,1283
+extern int keyCompareFunc(34,1535
+extern int freeFunc(49,1799
+struct ssd_info *initiation(initiation70,2230
+struct dram_info * initialize_dram(184,5764
+struct page_info * initialize_page(206,6679
+struct blk_info * initialize_block(215,6872
+struct plane_info * initialize_plane(236,7544
+struct die_info * initialize_die(255,8247
+struct chip_info * initialize_chip(275,8830
+struct ssd_info * initialize_channels(309,9990
+struct parameter_value *load_parameters(load_parameters343,11084
+
+ssd.h,27
+#define MAX_INT64 27,1309
+
+flash.c,1465
+Status allocate_location(24,1237
+struct ssd_info * insert2buffer(282,9907
+Status  find_active_block(535,21608
+Status write_page(565,22883
+struct sub_request * creat_sub_request(588,24105
+struct sub_request * find_read_sub_request(712,27803
+struct sub_request * find_write_sub_request(771,29429
+Status services_2_r_cmd_trans_and_complete(879,32262
+Status services_2_r_data_trans(928,34120
+int services_2_r_wait(1046,38883
+int delete_w_sub_request(1170,45037
+Status copy_back(1210,45928
+Status static_write(1309,51137
+Status services_2_write(1353,53485
+struct ssd_info *process(process1532,61185
+struct ssd_info *dynamic_advanced_process(dynamic_advanced_process1633,65911
+Status get_ppn_for_normal_command(2015,79285
+Status get_ppn_for_advanced_commands(2056,80840
+Status make_level_page(2357,90259
+Status find_level_page(2490,95801
+struct ssd_info *flash_page_state_modify(flash_page_state_modify2779,108067
+struct ssd_info *make_same_level(make_same_level2857,112691
+struct ssd_info *compute_serve_time(compute_serve_time2915,115563
+struct ssd_info *delete_from_channel(delete_from_channel3051,121589
+struct ssd_info *un_greed_interleave_copyback(un_greed_interleave_copyback3155,124235
+struct ssd_info *un_greed_copyback(un_greed_copyback3270,130536
+struct sub_request *find_interleave_twoplane_page(find_interleave_twoplane_page3326,133679
+int find_interleave_twoplane_sub_request(3400,136382
+Status go_one_step(3453,138188
+
+avlTree.c,933
+int avlTreeHigh(14,273
+int avlTreeCheck(41,992
+static void R_Rotate(117,3287
+static void L_Rotate(151,4379
+static void LeftBalance(175,5048
+static void RightBalance(233,7095
+static int avlDelBalance302,9131
+void AVL_TREE_LOCK391,11294
+void AVL_TREE_UNLOCK419,11838
+void AVL_TREENODE_FREE446,12369
+static int orderListInsert476,13173
+static int orderListRemove525,14210
+TREE_NODE *avlTreeFirstavlTreeFirst579,15181
+TREE_NODE *avlTreeLastavlTreeLast602,15712
+TREE_NODE *avlTreeNextavlTreeNext624,16242
+TREE_NODE *avlTreePrevavlTreePrev643,16703
+static int avlTreeInsert670,17485
+static int avlTreeRemove828,21563
+static TREE_NODE *avlTreeLookupavlTreeLookup998,25544
+tAVLTree *avlTreeCreate(avlTreeCreate1031,26426
+int avlTreeDel(1075,27502
+int avlTreeDestroy1102,28197
+int avlTreeFlush1142,29031
+int avlTreeAdd1178,29755
+TREE_NODE *avlTreeFindavlTreeFind1210,30506
+unsigned int avlTreeCount1233,31145
+
+initialize.h,12154
+#define INITIALIZE_H 19,1164
+#define SECTOR 29,1343
+#define BUFSIZE 30,1363
+#define DYNAMIC_ALLOCATION 32,1386
+#define STATIC_ALLOCATION 33,1416
+#define INTERLEAVE 35,1447
+#define TWO_PLANE 36,1469
+#define NORMAL 38,1492
+#define INTERLEAVE_TWO_PLANE 39,1513
+#define COPY_BACK	40,1545
+#define AD_RANDOM 42,1568
+#define AD_COPYBACK 43,1589
+#define AD_TWOPLANE 44,1612
+#define AD_INTERLEAVE 45,1635
+#define AD_TWOPLANE_READ 46,1660
+#define READ 48,1691
+#define WRITE 49,1707
+#define CHANNEL_IDLE 57,2212
+#define CHANNEL_C_A_TRANSFER 58,2238
+#define CHANNEL_GC 59,2270
+#define CHANNEL_DATA_TRANSFER 60,2303
+#define CHANNEL_TRANSFER 61,2336
+#define CHANNEL_UNKNOWN 62,2364
+#define CHIP_IDLE 64,2393
+#define CHIP_WRITE_BUSY 65,2416
+#define CHIP_READ_BUSY 66,2445
+#define CHIP_C_A_TRANSFER 67,2473
+#define CHIP_DATA_TRANSFER 68,2504
+#define CHIP_WAIT 69,2536
+#define CHIP_ERASE_BUSY 70,2559
+#define CHIP_COPYBACK_BUSY 71,2588
+#define UNKNOWN 72,2620
+#define SR_WAIT 74,2643
+#define SR_R_C_A_TRANSFER 75,2681
+#define SR_R_READ 76,2712
+#define SR_R_DATA_TRANSFER 77,2735
+#define SR_W_C_A_TRANSFER 78,2767
+#define SR_W_DATA_TRANSFER 79,2798
+#define SR_W_TRANSFER 80,2830
+#define SR_COMPLETE 81,2857
+#define REQUEST_IN 83,2884
+#define OUTPUT 84,2939
+#define GC_WAIT 86,2996
+#define GC_ERASE_C_A 87,3017
+#define GC_COPY_BACK 88,3043
+#define GC_COMPLETE 89,3069
+#define GC_INTERRUPT 90,3094
+#define GC_UNINTERRUPT 91,3118
+#define CHANNEL(93,3146
+#define chip(94,3191
+#define die(95,3228
+#define PLANE(96,3264
+#define BLOKC(97,3302
+#define PAGE(98,3340
+#define SUBPAGE(99,3377
+#define PG_SUB 101,3420
+#define TRUE	107,3604
+#define FALSE	108,3621
+#define SUCCESS	109,3639
+#define FAILURE	110,3659
+#define ERROR	111,3679
+#define INFEASIBLE	112,3698
+#define OVERFLOW	113,3721
+typedef int Status;114,3742
+struct ac_time_characteristics{ac_time_characteristics116,3770
+	int tPROG;117,3803
+	int tDBSY;118,3835
+	int tBERS;119,3892
+	int tCLS;120,3928
+	int tCLH;121,3962
+	int tCS;122,3995
+	int tCH;123,4028
+	int tWP;124,4060
+	int tALS;125,4094
+	int tALH;126,4128
+	int tDS;127,4161
+	int tDH;128,4196
+	int tWC;129,4230
+	int tWH;130,4266
+	int tADL;131,4303
+	int tR;132,4351
+	int tAR;133,4406
+	int tCLR;134,4441
+	int tRR;135,4476
+	int tRP;136,4511
+	int tWB;137,4545
+	int tRC;138,4580
+	int tREA;139,4615
+	int tCEA;140,4649
+	int tRHZ;141,4683
+	int tCHZ;142,4725
+	int tRHOH;143,4767
+	int tRLOH;144,4809
+	int tCOH;145,4850
+	int tREH;146,4892
+	int tIR;147,4934
+	int tRHW;148,4975
+	int tWHR;149,5012
+	int tRST;150,5049
+}ac_timing;ac_timing151,5090
+struct ssd_info{ssd_info154,5107
+	double ssd_energy;155,5126
+	int64_t current_time;156,5208
+	int64_t next_request_time;157,5262
+	unsigned int real_time_subreq;158,5291
+	int flag;159,5390
+	int active_flag;160,5402
+	unsigned int page;161,5541
+	unsigned int token;163,5564
+	unsigned int gc_request;164,5695
+	unsigned int write_request_count;166,5778
+	unsigned int read_request_count;167,5836
+	int64_t write_avg;168,5894
+	int64_t read_avg;169,5972
+	unsigned int min_lsn;171,6052
+	unsigned int max_lsn;172,6076
+	unsigned long read_count;173,6100
+	unsigned long program_count;174,6128
+	unsigned long erase_count;175,6159
+	unsigned long direct_erase_count;176,6188
+	unsigned long copy_back_count;177,6224
+	unsigned long m_plane_read_count;178,6257
+	unsigned long m_plane_prog_count;179,6293
+	unsigned long interleave_count;180,6329
+	unsigned long interleave_read_count;181,6363
+	unsigned long inter_mplane_count;182,6402
+	unsigned long inter_mplane_prog_count;183,6438
+	unsigned long interleave_erase_count;184,6479
+	unsigned long mplane_erase_conut;185,6519
+	unsigned long interleave_mplane_erase_count;186,6555
+	unsigned long gc_copy_back;187,6602
+	unsigned long write_flash_count;188,6632
+	unsigned long waste_page_count;189,6699
+	float ave_read_size;190,6775
+	float ave_write_size;191,6798
+	unsigned int request_queue_length;192,6822
+	unsigned int update_read_count;193,6859
+	char parameterfilename[parameterfilename195,6937
+	char tracefilename[tracefilename196,6967
+	char outputfilename[outputfilename197,6993
+	char statisticfilename[statisticfilename198,7020
+	char statisticfilename2[statisticfilename2199,7050
+	FILE * outputfile;201,7083
+	FILE * tracefile;202,7104
+	FILE * statisticfile;203,7124
+	FILE * statisticfile2;204,7148
+    struct parameter_value *parameter;parameter206,7175
+	struct dram_info *dram;dram207,7231
+	struct request *request_queue;request_queue208,7257
+	struct request *request_tail;request_tail209,7320
+	struct sub_request *subs_w_head;subs_w_head210,7390
+	struct sub_request *subs_w_tail;subs_w_tail211,7556
+	struct event_node *event;event212,7591
+	struct channel_info *channel_head;channel_head213,7741
+struct channel_info{channel_info217,7820
+	int chip;218,7842
+	unsigned long read_count;219,7908
+	unsigned long program_count;220,7936
+	unsigned long erase_count;221,7967
+	unsigned int token;222,7996
+	int current_state;224,8126
+	int next_state;225,8259
+	int64_t current_time;226,8277
+	int64_t next_state_predict_time;227,8339
+	struct event_node *event;event229,8452
+	struct sub_request *subs_r_head;subs_r_head230,8480
+	struct sub_request *subs_r_tail;subs_r_tail231,8571
+	struct sub_request *subs_w_head;subs_w_head232,8662
+	struct sub_request *subs_w_tail;subs_w_tail233,8753
+	struct gc_operation *gc_command;gc_command234,8842
+	struct chip_info *chip_head;chip_head235,8904
+struct chip_info{chip_info239,8951
+	unsigned int die_num;240,8970
+	unsigned int plane_num_die;241,9036
+	unsigned int block_num_plane;242,9110
+	unsigned int page_num_block;243,9186
+	unsigned int subpage_num_page;244,9261
+	unsigned int ers_limit;245,9337
+	unsigned int token;246,9406
+	int current_state;248,9535
+	int next_state;249,9667
+	int64_t current_time;250,9685
+	int64_t next_state_predict_time;251,9746
+	unsigned long read_count;253,9859
+	unsigned long program_count;254,9946
+	unsigned long erase_count;255,9977
+    struct ac_time_characteristics ac_timing;257,10008
+	struct die_info *die_head;die_head258,10057
+struct die_info{die_info262,10094
+	unsigned int token;264,10114
+	struct plane_info *plane_head;plane_head265,10242
+struct plane_info{plane_info270,10286
+	int add_reg_ppn;271,10306
+	unsigned int free_page;272,10512
+	unsigned int ers_invalid;273,10577
+	unsigned int active_block;274,10645
+	int can_erase_block;275,10733
+	struct direct_erase *erase_node;erase_node276,10844
+	struct blk_info *blk_head;blk_head277,11001
+struct blk_info{blk_info281,11038
+	unsigned int erase_count;282,11056
+	unsigned int free_page_num;283,11133
+	unsigned int invalid_page_num;284,11201
+	int last_write_page;285,11269
+	struct page_info *page_head;page_head286,11362
+struct page_info{page_info290,11428
+	int valid_state;291,11553
+	int free_state;292,11630
+	unsigned int lpn;293,11791
+	unsigned int written_count;294,11828
+struct dram_info{dram_info298,11894
+	unsigned int dram_capacity;299,11913
+	int64_t current_time;300,11948
+	struct dram_parameter *dram_paramters;dram_paramters302,11974
+	struct map_info *map;map303,12021
+	struct buffer_info *buffer;buffer304,12045
+typedef struct buffer_group{buffer_group318,12880
+	TREE_NODE node;319,12910
+	struct buffer_group *LRU_link_next;LRU_link_next320,13002
+	struct buffer_group *LRU_link_pre;LRU_link_pre321,13065
+	unsigned int group;323,13133
+	unsigned int stored;324,13237
+	unsigned int dirty_clean;325,13481
+	int flag;326,13640
+}buf_node;buf_node327,13728
+struct dram_parameter{dram_parameter330,13744
+	float active_current;331,13768
+	float sleep_current;332,13792
+	float voltage;333,13815
+	int clock_time;334,13832
+struct map_info{map_info338,13858
+	struct entry *map_entry;map_entry339,13876
+	struct buffer_info *attach_info;attach_info340,13981
+struct controller_info{controller_info344,14049
+	unsigned int frequency;345,14074
+	int64_t clock_time;346,14137
+	float power;347,14200
+struct request{request351,14273
+	int64_t time;352,14290
+	unsigned int lsn;353,14421
+	unsigned int size;354,14485
+	unsigned int operation;355,14549
+	unsigned int* need_distr_flag;357,14615
+	unsigned int complete_lsn_count;358,14648
+	int distri_flag;360,14730
+	int64_t begin_time;362,14825
+	int64_t response_time;363,14847
+	double energy_consumption;364,14872
+	struct sub_request *subs;subs366,14944
+	struct request *next_node;next_node367,15012
+struct sub_request{sub_request371,15080
+	unsigned int lpn;372,15101
+	unsigned int ppn;373,15167
+	unsigned int operation;374,15366
+	int size;375,15465
+	unsigned int current_state;377,15479
+	int64_t current_time;378,15562
+	unsigned int next_state;379,15586
+	int64_t next_state_predict_time;380,15613
+	 unsigned int state;381,15648
+	int64_t begin_time;384,16011
+	int64_t complete_time;385,16064
+	struct local *location;location387,16156
+	struct sub_request *next_subs;next_subs388,16312
+	struct sub_request *next_node;next_node389,16380
+	struct sub_request *update;update390,16456
+struct event_node{event_node397,16871
+	int type;398,16891
+	int64_t predict_time;399,16979
+	struct event_node *next_node;next_node400,17065
+	struct event_node *pre_node;pre_node401,17097
+struct parameter_value{parameter_value404,17134
+	unsigned int chip_num;405,17159
+	unsigned int dram_capacity;406,17221
+	unsigned int cpu_sdram;407,17280
+	unsigned int channel_number;409,17333
+	unsigned int chip_channel[chip_channel410,17412
+	unsigned int die_chip;412,17492
+	unsigned int plane_die;413,17521
+	unsigned int block_plane;414,17547
+	unsigned int page_block;415,17575
+	unsigned int subpage_page;416,17602
+	unsigned int page_capacity;418,17633
+	unsigned int subpage_capacity;419,17663
+	unsigned int ers_limit;422,17700
+	int address_mapping;423,17759
+	int wear_leveling;424,17838
+	int gc;425,17882
+	int clean_in_background;426,17929
+	int alloc_pool;427,17988
+	float overprovide;428,18101
+	float gc_threshold;429,18122
+	double operating_current;431,18279
+	double supply_voltage;432,18344
+	double dram_active_current;433,18370
+	double dram_standby_current;434,18434
+	double dram_refresh_current;435,18498
+	double dram_voltage;436,18562
+	int buffer_management;438,18626
+	int scheduling_algorithm;439,18712
+	float quick_radio;440,18777
+	int related_mapping;441,18798
+	unsigned int time_step;443,18823
+	unsigned int small_large_write;444,18849
+	int striping;446,18992
+	int interleaving;447,19075
+	int pipelining;448,19095
+	int threshold_fixed_adjust;449,19113
+	int threshold_value;450,19143
+	int active_write;451,19166
+	float gc_hard_threshold;452,19235
+	int allocation_scheme;453,19348
+	int static_allocation;454,19433
+	int dynamic_allocation;455,19531
+	int advanced_commands;456,19586
+	int ad_priority;457,19613
+	int ad_priority2;458,19722
+	int greed_CB_ad;459,19886
+	int greed_MPW_ad;460,20013
+	int aged;461,20158
+	float aged_ratio;462,20253
+	int queue_length;463,20274
+	struct ac_time_characteristics time_characteristics;465,20331
+struct entry{entry471,20569
+	unsigned int pn;472,20607
+	int state;473,20712
+struct local{local477,20883
+	unsigned int channel;478,20908
+	unsigned int chip;479,20932
+	unsigned int die;480,20953
+	unsigned int plane;481,20973
+	unsigned int block;482,20995
+	unsigned int page;483,21017
+	unsigned int sub_page;484,21038
+struct gc_info{gc_info488,21071
+	int64_t begin_time;489,21088
+	int copy_back_count;490,21157
+	int erase_count;491,21184
+	int64_t process_time;492,21203
+	double energy_consumption;493,21268
+struct direct_erase{direct_erase497,21341
+	unsigned int block;498,21363
+	struct direct_erase *next_node;next_node499,21385
+struct gc_operation{gc_operation506,21694
+	unsigned int chip;507,21726
+	unsigned int die;508,21747
+	unsigned int plane;509,21767
+	unsigned int block;510,21789
+	unsigned int page;511,21900
+	unsigned int state;512,22015
+	unsigned int priority;513,22070
+	struct gc_operation *next_node;next_node514,22175
+typedef struct Dram_write_map521,22266
+	unsigned int state;523,22300
+}Dram_write_map;Dram_write_map524,22323
+
+avlTree.h,1215
+#define AVLTREE_H 2,19
+#define AVL_NULL	8,111
+#define EH_FACTOR	10,147
+#define LH_FACTOR	11,168
+#define RH_FACTOR	12,189
+#define LEFT_MINUS	13,211
+#define RIGHT_MINUS	14,233
+#define ORDER_LIST_WANTED17,260
+#define INSERT_PREV	19,289
+#define INSERT_NEXT	20,312
+typedef struct _AVL_TREE_NODE22,337
+	struct _AVL_TREE_NODE *prev;prev25,397
+	struct _AVL_TREE_NODE *next;next26,428
+	struct _AVL_TREE_NODE *tree_root;tree_root28,467
+	struct _AVL_TREE_NODE *left_child;left_child29,503
+	struct _AVL_TREE_NODE *right_child;right_child30,540
+	int  bf;31,578
+}TREE_NODE;TREE_NODE32,697
+typedef struct buffer_info34,712
+	unsigned long read_hit;36,743
+	unsigned long read_miss_hit;37,842
+	unsigned long write_hit;38,875
+	unsigned long write_miss_hit;39,905
+	struct buffer_group *buffer_head;buffer_head41,939
+	struct buffer_group *buffer_tail;buffer_tail42,1030
+	TREE_NODE	*pTreeHeader;pTreeHeader43,1122
+	unsigned int max_buffer_sector;45,1198
+	unsigned int buffer_sector_count;46,1232
+	TREE_NODE	*pListHeader;pListHeader49,1296
+	TREE_NODE	*pListTail;pListTail50,1322
+	unsigned int	count;52,1354
+	int 			(*keyCompare)keyCompare53,1416
+	int			(*free)free54,1467
+} tAVLTree;55,1497
+
+flash.h,25
+#define FLASH_H 20,1156
