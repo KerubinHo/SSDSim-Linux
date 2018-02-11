@@ -1,5 +1,5 @@
 parameter file: page.parameters
-trace file: random-read.trace
+trace file: read-after-write.trace
 -----------------------parameter file----------------------
 #parameter file
 dram capacity = 131074;     #the unit is B
@@ -90,16 +90,75 @@ greed MPW command=1;            #1 for using multi-plane write greedily, 0 for n
 aged=0;                         #1 for making SSD aged, 0 for keeping SSD non-aged
 aged ratio=0.7;                #If we need to make SSD aged, set the aged ratio in advance
 -----------------------simulation output----------------------
-chip:0,die:0,plane:0 have free page: 131070
+chip:0,die:0,plane:0 have free page: 131071
 chip:0,die:0,plane:1 have free page: 131071
 chip:0,die:1,plane:0 have free page: 131071
-chip:0,die:1,plane:1 have free page: 131071
-chip:1,die:0,plane:0 have free page: 131070
+chip:0,die:1,plane:1 have free page: 131072
+chip:1,die:0,plane:0 have free page: 131071
 chip:1,die:0,plane:1 have free page: 131071
 chip:1,die:1,plane:0 have free page: 131071
-chip:1,die:1,plane:1 have free page: 131071
+chip:1,die:1,plane:1 have free page: 131072
 									OUTPUT
 ****************** TRACE INFO ******************
       arrive           lsn     size ope     begin time    response time    process time
-            1000          0      4  1             1000            72375      71375
-            2000      10000      4  1             2000            73375      71375
+            1000          0      4  0             1000             2000       1000
+            2000          0      4  1             2000             3000       1000
+            3000          8      4  0             3000             4000       1000
+            4000          8      4  1             4000             5000       1000
+            5000         16      4  0             5000             6000       1000
+            6000         16      4  1             6000             7000       1000
+            7000         24      4  0             7000             8000       1000
+            8000         24      4  1             8000             9000       1000
+            9000         32      4  0             9000            10000       1000
+           10000         32      4  1            10000            11000       1000
+           11000         40      4  0            11000            12000       1000
+           12000         40      4  1            12000            13000       1000
+           13000         48      4  0            13000            14000       1000
+           14000         48      4  1            14000            15000       1000
+           15000         56      4  0            15000            16000       1000
+           16000         56      4  1            16000            17000       1000
+           17000         64      4  0            17000            18000       1000
+           18000         64      4  1            18000            19000       1000
+           19000         72      4  0            19000            20000       1000
+           20000         72      4  1            20000            21000       1000
+the 0 channel, 0 chip, 0 die, 2048 plane has :             0 erase operations
+the 0 channel, 0 chip, 1 die, 2048 plane has :             0 erase operations
+the 0 channel, 1 chip, 0 die, 2048 plane has :             0 erase operations
+the 0 channel, 1 chip, 1 die, 2048 plane has :             0 erase operations
+the 1 channel, 0 chip, 0 die, 2048 plane has :             0 erase operations
+the 1 channel, 0 chip, 1 die, 2048 plane has :             0 erase operations
+the 1 channel, 1 chip, 0 die, 2048 plane has :             0 erase operations
+the 1 channel, 1 chip, 1 die, 2048 plane has :             0 erase operations
+
+
+---------------------------statistic data---------------------------
+min lsn:             0
+max lsn:            72
+read count:             0
+program count:            10                        include the flash write count leaded by read requests
+the read operation leaded by un-covered update count:             0
+erase count:             0
+direct erase count:             0
+copy back count:             0
+multi-plane program count:             0
+multi-plane read count:             0
+interleave write count:             0
+interleave read count:             0
+interleave two plane and one program count:             0
+interleave two plane count:             0
+gc copy back count:             0
+write flash count:            10
+interleave erase count:             0
+multiple plane erase count:             0
+interleave multiple plane erase count:             0
+read request count:            10
+write request count:            10
+read request average size:      4.000000
+write request average size:      4.000000
+read request average response time: 1000
+write request average response time: 1000
+buffer read hits:            40
+buffer read miss:             0
+buffer write hits:             0
+buffer write miss:             0
+erase:             0

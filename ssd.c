@@ -420,7 +420,7 @@ struct ssd_info *buffer_management(struct ssd_info *ssd)
 		{
 			complete_flag = 0;
 		}
-	}
+		}
 
 	/*************************************************************
 	*如果请求已经被全部由buffer服务，该请求可以被直接响应，输出结果
@@ -433,7 +433,7 @@ struct ssd_info *buffer_management(struct ssd_info *ssd)
 	}
 
 	return ssd;
-}
+	}
 
 /*****************************
 *lpn向ppn的转换
@@ -448,7 +448,7 @@ unsigned int lpn2ppn(struct ssd_info *ssd,unsigned int lsn)
 	lpn = lsn/ssd->parameter->subpage_page;			//lpn
 	ppn = (p_map[lpn]).pn;
 	return ppn;
-}
+	}
 
 /**********************************************************************************
 *读请求分配子请求函数，这里只处理读请求，写请求已经在buffer_management()函数中处理了

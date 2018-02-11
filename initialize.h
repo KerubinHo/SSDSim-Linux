@@ -71,7 +71,7 @@ Hao Luo         2011/01/01        2.0           Change               luohao13568
 #define CHIP_COPYBACK_BUSY 110
 #define UNKNOWN 111
 
-#define SR_WAIT 200                 
+#define SR_WAIT 200
 #define SR_R_C_A_TRANSFER 201
 #define SR_R_READ 202
 #define SR_R_DATA_TRANSFER 203
