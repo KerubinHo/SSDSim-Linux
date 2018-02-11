@@ -31,6 +31,7 @@ int main () {
 	request1->subs = NULL;
 	request1->need_distr_flag = NULL;
 	request1->complete_lsn_count=0;
-	
+
+	ssd->request_tail = request1;
 	buffer_management(ssd);
 }
